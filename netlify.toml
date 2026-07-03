@@ -2,14 +2,10 @@ plugins = []
 headers = []
 redirects = []
 
-[dev]
-command = "npm run dev"
-targetPort = 3000
-port = 8888
-
-[functions]
-
-  [functions."*"]
-
 [build]
+  command = "echo 'skip build'"
   publish = "."
+
+[[edge_functions]]
+  function = "basic-auth"
+  path = "/*"
